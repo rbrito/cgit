@@ -1,0 +1,43 @@
+Source: cgit
+Section: web
+Priority: extra
+Maintainer: Stefan Bühler <source@stbuehler.de>
+Build-Depends: cdbs, debhelper (>= 6), zlib1g-dev, libssl-dev, libcurl4-openssl-dev, curl
+Standards-Version: 3.9.1
+Homepage: http://hjemli.net/git/cgit/
+Vcs-Git: git://hjemli.net/pub/git/cgit
+
+Package: cgit
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: a fast web-interface for git repositories
+ cgit is
+  * a cgi application implemented in C: it's basically (yet) another git
+    command, used to generate html.
+  * not forking: all git operations are performed by linking with libgit.a.
+  * using a built-in cache: the generated html is stored on disk for the
+    benefit of later requests.
+  * fond of virtual urls: with the help of modules like mod_rewrite, cgit uses
+    urls like http://hjemli.net/git/git/log/Documentation/SubmittingPatches.
+  * not too visual, but sometimes a bit of graphics can be justified.
+  * open source - it is licensed under GPL v2.
+ .
+ maintained by Lars Hjemli.
+
+Package: cgit-dbg
+Section: debug
+Architecture: any
+Depends: ${misc:Depends}, cgit (= ${binary:Version})
+Description: a fast web-interface for git repositories (debug symbols)
+ cgit is
+  * a cgi application implemented in C: it's basically (yet) another git
+    command, used to generate html.
+  * not forking: all git operations are performed by linking with libgit.a.
+  * using a built-in cache: the generated html is stored on disk for the
+    benefit of later requests.
+  * fond of virtual urls: with the help of modules like mod_rewrite, cgit uses
+    urls like http://hjemli.net/git/git/log/Documentation/SubmittingPatches.
+  * not too visual, but sometimes a bit of graphics can be justified.
+  * open source - it is licensed under GPL v2.
+ .
+ maintained by Lars Hjemli.

@@ -1,0 +1,10 @@
+#! /bin/sh -e
+# postinst script for cgit
+
+if [ "$1" = "configure" ]; then
+	chown www-data:www-data /var/cache/cgit
+fi
+
+#DEBHELPER#
+
+exit 0

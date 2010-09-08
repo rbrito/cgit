@@ -1,0 +1,10 @@
+#!/bin/sh -e
+# postrm script for cgit
+
+if [ "$1" = "purge" ]; then
+    rm -rf /var/cache/cgit
+fi
+
+#DEBHELPER#
+
+exit 0

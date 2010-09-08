@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+
+ARCH ?=$(shell dpkg-architecture -qDEB_HOST_ARCH)
+CC =gcc
+CFLAGS =-g -Wall
+STRIP =
+OPTS =NO_OPENSSL=1 WITH_P4IMPORT=1 THREADED_DELTA_SEARCH=1
+ifeq (hppa,$(ARCH))
+  CFLAGS +=-O0
+else
+  CFLAGS +=-O2
+endif
+
+ifeq (powerpc,$(ARCH))
+OPTS +=PPC_SHA1=1
+else
+ifeq (arm,$(ARCH))
+  OPTS +=ARM_SHA1=1
+endif
+endif
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/makefile.mk
+
+DEB_MAKE_INVOKE = $(MAKE) CGIT_SCRIPT_PATH=/usr/lib/cgi-bin CGIT_DATA_PATH=/usr/share/cgit NO_OPENSSL=1
+DEB_MAKE_INSTALL_TARGET = install DESTDIR=$(DEB_DESTDIR) CC='$(CC)' CFLAGS='$(CFLAGS)' $(OPTS)
+DEB_MAKE_BUILD_TARGET = all DESTDIR=$(DEB_DESTDIR) CC='$(CC)' CFLAGS='$(CFLAGS)' $(OPTS)
+
+DEB_DH_SHLIBDEPS_ARGS_cgit = -- debian/tmp/usr/lib/cgi-bin/cgit.cgi
+
+common-configure-arch common-configure-indep:: debian/stamp-get-git
+debian/stamp-get-git:
+	$(MAKE) get-git
+	touch debian/stamp-get-git
+
+clean::
+	rm -rf git debian/stamp-get-git
