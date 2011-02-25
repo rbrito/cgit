@@ -36,3 +36,5 @@ Description: a fast web-interface for git repositories (debug symbols)
   * fond of virtual urls: with the help of modules like mod_rewrite, cgit uses
     urls like http://hjemli.net/git/git/log/Documentation/SubmittingPatches.
   * not too visual, but sometimes a bit of graphics can be justified.
+ .
+ This package contains debugging information for use with cgit.
