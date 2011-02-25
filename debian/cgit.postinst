@@ -1,4 +1,6 @@
-#! /bin/sh -e
+#! /bin/sh
+
+set -e
 # postinst script for cgit
 
 if [ "$1" = "configure" ]; then
