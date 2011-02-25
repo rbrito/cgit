@@ -2,7 +2,7 @@ Source: cgit
 Section: web
 Priority: extra
 Maintainer: Stefan Bühler <source@stbuehler.de>
-Build-Depends: cdbs, debhelper (>= 6), zlib1g-dev, libssl-dev, libcurl4-openssl-dev, curl
+Build-Depends: cdbs, debhelper (>= 7.0.50~), zlib1g-dev, libssl-dev, libcurl4-openssl-dev, curl
 Standards-Version: 3.9.1
 Homepage: http://hjemli.net/git/cgit/
 Vcs-Git: git://hjemli.net/pub/git/cgit
