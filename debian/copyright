@@ -9,7 +9,7 @@ Upstream Author:
 
 Copyright:
 
-    Copyright (C) 2006-2008 Lars Hjemli
+    Copyright © 2006-2008 Lars Hjemli
 
 License:
 
@@ -30,5 +30,5 @@ License:
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
-The Debian packaging is (C) 2008, Stefan Bühler <source@stbuehler.de> and
-is licensed under the GPL, see above.
+The Debian packaging is © 2008-2011, Stefan Bühler <source@stbuehler.de> and is
+licensed under the GPL, see above.
