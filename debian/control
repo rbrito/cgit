@@ -21,8 +21,6 @@ Description: a fast web-interface for git repositories
     urls like http://hjemli.net/git/git/log/Documentation/SubmittingPatches.
   * not too visual, but sometimes a bit of graphics can be justified.
   * open source - it is licensed under GPL v2.
- .
- maintained by Lars Hjemli.
 
 Package: cgit-dbg
 Section: debug
@@ -39,5 +37,3 @@ Description: a fast web-interface for git repositories (debug symbols)
     urls like http://hjemli.net/git/git/log/Documentation/SubmittingPatches.
   * not too visual, but sometimes a bit of graphics can be justified.
   * open source - it is licensed under GPL v2.
- .
- maintained by Lars Hjemli.
