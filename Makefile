@@ -127,18 +127,17 @@ endif
 
 all: cgit
 
-#VERSION: force-version
-#	@./gen-version.sh "$(CGIT_VERSION)"
-#-include VERSION
+VERSION: force-version
+	@./gen-version.sh "$(CGIT_VERSION)"
+-include VERSION
 
 
-CFLAGS += -g -Wall
-override CFLAGS += -Igit
-override CFLAGS += -DSHA1_HEADER='$(SHA1_HEADER)'
-override CFLAGS += -DCGIT_VERSION='"$(CGIT_VERSION)"'
-override CFLAGS += -DCGIT_CONFIG='"$(CGIT_CONFIG)"'
-override CFLAGS += -DCGIT_SCRIPT_NAME='"$(CGIT_SCRIPT_NAME)"'
-override CFLAGS += -DCGIT_CACHE_ROOT='"$(CACHE_ROOT)"'
+CFLAGS += -g -Wall -Igit
+CFLAGS += -DSHA1_HEADER='$(SHA1_HEADER)'
+CFLAGS += -DCGIT_VERSION='"$(CGIT_VERSION)"'
+CFLAGS += -DCGIT_CONFIG='"$(CGIT_CONFIG)"'
+CFLAGS += -DCGIT_SCRIPT_NAME='"$(CGIT_SCRIPT_NAME)"'
+CFLAGS += -DCGIT_CACHE_ROOT='"$(CACHE_ROOT)"'
 
 GIT_OPTIONS = prefix=/usr
 
@@ -161,7 +160,7 @@ endif
 cgit: $(OBJECTS) libgit
 	$(QUIET_CC)$(CC) $(CFLAGS) $(LDFLAGS) -o cgit $(OBJECTS) $(EXTLIBS)
 
-#cgit.o: VERSION
+cgit.o: VERSION
 
 ifneq "$(MAKECMDGOALS)" "clean"
   -include $(OBJECTS:.o=.d)
@@ -235,7 +234,7 @@ $(DOC_PDF): %.pdf : %.txt
 	a2x -f pdf cgitrc.5.txt
 
 clean: clean-doc
-	rm -f cgit *.o *.d
+	rm -f cgit VERSION *.o *.d
 
 clean-doc:
 	rm -f cgitrc.5 cgitrc.5.html cgitrc.5.pdf cgitrc.5.xml cgitrc.5.fo
