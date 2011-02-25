@@ -1,0 +1,40 @@
+Description: Patch upstream's Makefile
+ Don't use gen-version.sh in the snapshot builds.
+Author: Stefan Bühler <source@stbuehler.de>
+Reviewed-By: Rogério Theodoro de Brito <rbrito@ime.usp.br>
+Forwarded: no
+Last-Update: 2011-02-25
+
+--- a/Makefile
++++ b/Makefile
+@@ -127,9 +127,9 @@
+ 
+ all: cgit
+ 
+-VERSION: force-version
+-	@./gen-version.sh "$(CGIT_VERSION)"
+--include VERSION
++#VERSION: force-version
++#	@./gen-version.sh "$(CGIT_VERSION)"
++#-include VERSION
+ 
+ 
+ CFLAGS += -g -Wall
+@@ -161,7 +161,7 @@
+ cgit: $(OBJECTS) libgit
+ 	$(QUIET_CC)$(CC) $(CFLAGS) $(LDFLAGS) -o cgit $(OBJECTS) $(EXTLIBS)
+ 
+-cgit.o: VERSION
++#cgit.o: VERSION
+ 
+ ifneq "$(MAKECMDGOALS)" "clean"
+   -include $(OBJECTS:.o=.d)
+@@ -235,7 +235,7 @@
+ 	a2x -f pdf cgitrc.5.txt
+ 
+ clean: clean-doc
+-	rm -f cgit VERSION *.o *.d
++	rm -f cgit *.o *.d
+ 
+ clean-doc:
+ 	rm -f cgitrc.5 cgitrc.5.html cgitrc.5.pdf cgitrc.5.xml cgitrc.5.fo

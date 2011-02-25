@@ -1,0 +1,28 @@
+Description: Append content to overridden variables from the command line.
+Author: Stefan Bühler <source@stbuehler.de>
+Reviewed-By: Rogério Theodoro de Brito <rbrito@ime.usp.br>
+Forwarded: no
+Last-Update: 2011-02-25
+
+--- a/Makefile
++++ b/Makefile
+@@ -132,12 +132,13 @@
+ -include VERSION
+ 
+ 
+-CFLAGS += -g -Wall -Igit
+-CFLAGS += -DSHA1_HEADER='$(SHA1_HEADER)'
+-CFLAGS += -DCGIT_VERSION='"$(CGIT_VERSION)"'
+-CFLAGS += -DCGIT_CONFIG='"$(CGIT_CONFIG)"'
+-CFLAGS += -DCGIT_SCRIPT_NAME='"$(CGIT_SCRIPT_NAME)"'
+-CFLAGS += -DCGIT_CACHE_ROOT='"$(CACHE_ROOT)"'
++CFLAGS += -g -Wall
++override CFLAGS += -Igit
++override CFLAGS += -DSHA1_HEADER='$(SHA1_HEADER)'
++override CFLAGS += -DCGIT_VERSION='"$(CGIT_VERSION)"'
++override CFLAGS += -DCGIT_CONFIG='"$(CGIT_CONFIG)"'
++override CFLAGS += -DCGIT_SCRIPT_NAME='"$(CGIT_SCRIPT_NAME)"'
++override CFLAGS += -DCGIT_CACHE_ROOT='"$(CACHE_ROOT)"'
+ 
+ GIT_OPTIONS = prefix=/usr
+ 

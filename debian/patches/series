@@ -1,0 +1,3 @@
+01-override-makefile-variables.patch
+02-ignore-version-in-snapshot-builds.patch
+03-fix-filter-script.patch

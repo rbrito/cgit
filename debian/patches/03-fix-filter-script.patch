@@ -1,0 +1,18 @@
+Description: Fix syntax highliting filter comparison.
+Author: Stefan Bühler <source@stbuehler.de>
+Reviewed-By: Rogério Theodoro de Brito <rbrito@ime.usp.br>
+Forwarded: no
+Last-Update: 2011-02-25
+
+--- a/filters/syntax-highlighting.sh
++++ b/filters/syntax-highlighting.sh
+@@ -29,6 +29,8 @@
+ EXTENSION="${BASENAME##*.}"
+ 
+ # map Makefile and Makefile.* to .mk
+-[ "${BASENAME%%.*}" == "Makefile" ] && EXTENSION=mk
++if [ "${BASENAME%%.*}" = "Makefile" ]; then
++	EXTENSION=mk
++fi
+ 
+ exec highlight --force -f -I -X -S $EXTENSION 2>/dev/null
