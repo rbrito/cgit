@@ -5,7 +5,8 @@ Maintainer: Stefan Bühler <source@stbuehler.de>
 Build-Depends: cdbs, debhelper (>= 7.0.50~), zlib1g-dev, libssl-dev, libcurl4-openssl-dev, curl
 Standards-Version: 3.9.1
 Homepage: http://hjemli.net/git/cgit/
-Vcs-Git: git://hjemli.net/pub/git/cgit
+Vcs-Browser: http://cgit.stbuehler.de/mirror/cgit/
+Vcs-Git: git://stbuehler.de/mirror/cgit.git
 
 Package: cgit
 Architecture: any
