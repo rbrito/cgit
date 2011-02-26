@@ -1,0 +1,16 @@
+Description: Don't fetch the git tarball when building the source.
+Author: Rogério Theodoro de Brito <rbrito@ime.usp.br>
+Forwarded: no
+Last-Update: 2011-02-25
+
+--- a/Makefile
++++ b/Makefile
+@@ -121,7 +121,7 @@
+ endif
+ 
+ 
+-.PHONY: all libgit test install uninstall clean force-version get-git \
++.PHONY: all libgit test install uninstall clean force-version \
+ 	doc clean-doc install-doc install-man install-html install-pdf \
+ 	uninstall-doc uninstall-man uninstall-html uninstall-pdf
+ 
