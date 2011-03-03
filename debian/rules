@@ -28,11 +28,3 @@ DEB_MAKE_INSTALL_TARGET = install DESTDIR=$(DEB_DESTDIR) CC='$(CC)' CFLAGS='$(CF
 DEB_MAKE_BUILD_TARGET = all DESTDIR=$(DEB_DESTDIR) CC='$(CC)' CFLAGS='$(CFLAGS)' $(OPTS)
 
 DEB_DH_SHLIBDEPS_ARGS_cgit = -- debian/tmp/usr/lib/cgi-bin/cgit.cgi
-
-common-configure-arch common-configure-indep:: debian/stamp-get-git
-debian/stamp-get-git:
-	$(MAKE) get-git
-	touch debian/stamp-get-git
-
-clean::
-	rm -rf git debian/stamp-get-git
