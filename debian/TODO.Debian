@@ -1,0 +1,7 @@
+# Things that are not quite good
+
+* It may fail to work in a chroot environment.
+* It should include all the stuff that git-core build-depends as the build-depends too.
+* We should include things like tidy for the test suite.
+* We may fail if /var/cache is gone and not created at boot time.
+* Many things more.
