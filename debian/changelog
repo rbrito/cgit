@@ -1,3 +1,25 @@
+cgit (0.8.3.4-115-g1759645-2~ppa0) maverick; urgency=low
+
+  * debian/source/format: State that we are using version 3.0
+  * debian: Update to use debhelper 7
+  * debian: Remove angle brackets from the copyright file.
+  * Ignore quilt dir
+  * debian: remove the name of the upstream author from the long description.
+  * debian: Remove statement that it is Free Software.
+  * debian: make Vcs-* fields point to the correct locations.
+  * debian: Indicate that the debug package contains debug information.
+  * debian: Make the license reference be versioned.
+  * Cosmetic changes to the copyright file.
+  * Restore upstream files to their pristine versions.
+  * debian: separate patches applied to upstream's sources.
+  * cosmetics: Add some spaces for legibility.
+  * debian: Fix lintian's maintainer-script-without-set-e.
+  * cosmetics: Remove useless comment.
+  * debian: Don't fetch the git tarball while building the package.
+  * debian: Don't mess with the git tarball.
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Thu, 03 Mar 2011 08:42:49 -0300
+
 cgit (0.8.3.4-115-g1759645-1) unstable; urgency=low
 
   * git snapshot
