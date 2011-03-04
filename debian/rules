@@ -14,10 +14,6 @@ endif
 
 ifeq (powerpc,$(ARCH))
   OPTS += PPC_SHA1=1
-else
-ifeq (arm,$(ARCH))
-  OPTS += ARM_SHA1=1
-endif
 endif
 
 include /usr/share/cdbs/1/rules/debhelper.mk
