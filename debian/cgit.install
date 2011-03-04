@@ -1,4 +1,4 @@
-debian/tmp/usr/lib/cgi-bin/cgit.cgi
-debian/tmp/usr/share/cgit/*
-debian/cgitrc /etc/
-filters/* /usr/share/cgit/filters/
+debian/cgitrc				/etc
+filters/*				/usr/share/cgit/filters
+usr/lib/cgi-bin/cgit.cgi
+usr/share/cgit/*
