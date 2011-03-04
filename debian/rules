@@ -1,16 +1,10 @@
 #!/usr/bin/make -f
 
-ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-CC = gcc
-CFLAGS = -g -Wall
-STRIP =
+# First, some decision on how to configure the package
+OPTS = NO_OPENSSL=1 CGIT_SCRIPT_PATH=/usr/lib/cgi-bin CGIT_DATA_PATH=/usr/share/cgit
 
-OPTS = NO_OPENSSL=1 WITH_P4IMPORT=1 THREADED_DELTA_SEARCH=1
-ifeq (hppa,$(ARCH))
-  CFLAGS += -O0
-else
-  CFLAGS += -O2
-endif
+# Determine some arch-specific settings
+ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 ifeq (powerpc,$(ARCH))
   OPTS += PPC_SHA1=1
