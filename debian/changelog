@@ -1,3 +1,16 @@
+cgit (0.8.3.4-115-g1759645-2~ppa3) maverick; urgency=low
+
+  * debian: Add B-D on git for the test suite of cgit.
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Fri, 04 Mar 2011 19:56:35 -0300
+
+cgit (0.8.3.4-115-g1759645-2~ppa2) maverick; urgency=low
+
+  * Remove b-d on cdbs.
+  * Add b-d on python.
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Fri, 04 Mar 2011 12:58:44 -0300
+
 cgit (0.8.3.4-115-g1759645-2~ppa1) maverick; urgency=low
 
   * Remove unused legacy option.
